@@ -81,13 +81,6 @@ fix!(Pets): fix plates
 ```
 
 2. separar subject y body con un salto de linea
-```
-eg.
-
-fix(Topic): add validation
-
-Body
-```
 3. el commit message no debe de contener espacios en blanco demás
 4. quitar signos de puntación innecesarios
 5. no finalizar el subject con un periodo
@@ -97,7 +90,13 @@ Body
 9. No asumir que quien revisa sabe todo el contexto, hay que incluir los detalles del problema
 10. No pensar que el commit explica todo lo que se realizo
 11. Seguir la estructura de commit definida por el equipo
+```
+[type][optional scope]: [short summary]
 
+[body]
+
+[optional footer]
+```
 # Revisión de código 
 Al realizar pull request se debe de asiganr a un reviewer quien analizara y determinara si el pull request continua, en dado caso que el merge a master tenga inconvientes se revertira el merge
 ## Puntos a considerar
