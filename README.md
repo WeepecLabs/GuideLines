@@ -1,14 +1,42 @@
 # Development GuideLines Weepec
 
 ## Tecnologias
-* Reactjs
-* ReactNative
-* Nodejs
-* Vue
+* Frontend
+    * Reactjs
+    * ReactNative
+    * Nodejs
+    * Vuejs
+    * MongoDB
+* Server
+    * Docker
+    * Docker-Compose
+* Backend
+    * Prisma
+    * Graphql
+    * Loopback4
+* Storage
+    * Redis
+    * Redux
+    * MongoDB
 
 ## Creación de repositorio 
+Se debe tener una notaciòn en la cual se denote 3 partes
+* Proyecto al cual se pertenece (weepec)
+* Ambito
+* tecnologia principal
 
+```
+[Proyecto]-[Ambito]-[Tecnologia]
+```
+
+el cual quedaria como 
+
+```
+weepec-app-reactnative
+```
 ## Manejo de ramas
+
+Este debe ser con el flujo de trabajo git-flow, se deja una pequeña referencia [aquí](https://www.atlassian.com/es/git/tutorials/comparing-workflows/gitflow-workflow)
 
 ## Commits a repositorios
 
@@ -59,6 +87,9 @@ Resolves: #123
     * `docs`: Everything related to documentation
     * `chore`: Regular code maintenance.[ You can also use emojis to represent commit types]
 
+The symbol ”!” can be used with any type. It signifies a breaking change that correlates with MAJOR in semantic versioning.
+Using BREAKING CHANGE in the footer introduces a breaking API change as well (correlating with MAJOR in semantic versioning).
+
 2. Separate the subject from the body with a blank line
 3. Your commit message should not contain any whitespace errors
 4. Remove unnecessary punctuation marks
@@ -69,3 +100,9 @@ Resolves: #123
 9. Do not assume the reviewer understands what the original problem was, ensure you add it.
 10. Do not think your code is self-explanatory
 11. Follow the commit convention defined by your team
+
+# Revisión de código 
+## Puntos a considerar
+* Evitar código comentado en cualquier punto
+* uso de `console.log` debe de ser unicamente en desarrolo y cierto punto de debuging
+* no usar segmentación de código y repetir código
