@@ -48,21 +48,7 @@ Necesitamos establecer reglar y una guia de desarrollo para que para todos sea c
 
 Tanto commit messages, como revisión de codigo nos ayuda a hacer mas entendible, para un desarrollo y colaboración más entendible.
 
-```text
-Todo en minusculas, con menos de 50 caracteres
-
-En el body se debe de incluir una breve explicación sobre lo que se resuelve
-
-Los cambios que se efectuan se deben de listar de la siguiente manera agregando Note:
-
-Note:
-- Se listan a continuación los cambios realizados
-- Segundo cambio realizado
-
-Al usar Sentry especifica el codigo que provee
-
-Fix: #WEEPEC-K1
-```
+Para lograr esto necesitamos:
 
 1. Especificar tipo de commit
     * `feat`: Una nueva caracteristica que se agrega al proyecto (feature)
@@ -96,6 +82,26 @@ fix!(Pets): fix plates
 [body]
 
 [optional footer]
+```
+
+El Scope es el modulo, package o apartado que se modifico, este es opcional.
+
+Message commit de ejemplo
+```text
+
+Todo en minusculas, con menos de 50 caracteres
+
+En el body se debe de incluir una breve explicación sobre lo que se resuelve
+
+Los cambios que se efectuan se deben de listar de la siguiente manera agregando Note:
+
+Note:
+- Se listan a continuación los cambios realizados
+- Segundo cambio realizado
+
+Al usar Sentry especifica el codigo que provee
+
+Fix: #WEEPEC-K1
 ```
 # Revisión de código 
 Al realizar pull request se debe de asiganr a un reviewer quien analizara y determinara si el pull request continua, en dado caso que el merge a master tenga inconvientes se revertira el merge
