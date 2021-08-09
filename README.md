@@ -38,71 +38,74 @@ weepec-app-reactnative
 
 Este debe ser con el flujo de trabajo git-flow, se deja una pequeña referencia [aquí](https://www.atlassian.com/es/git/tutorials/comparing-workflows/gitflow-workflow)
 
-## Commits a repositorios
+## Commits Messages
 
-Motivación: 
-You might say, "It's just a personal project." Yes, you work alone now, but what happens when you work with a team or contribute to open source?
+Motivación:
 
-A well-crafted Git commit message is the best way to communicate context about a change to other developers working on that project, and indeed, to your future self.
+Al estar en un proyecto personal es normal usar o no usar métodos de trabajo ya que "nosotros nos entendemos" ¿pero que pasa al trabajar en equipo?
 
-Have you ever tried running git log on one of your old projects to see the "weird" commit messages you have used since its inception? It can be hard to understand why you made some changes in the past, and you'll wish you read this article earlier :)
+Necesitamos establecer reglar y una guia de desarrollo para que para todos sea compremsible y no encontrar cosas que sean raras y no sean entendibles para los demas, y en un futuro poder leer lo que alguien más hizo sin ninguna complicación.
 
-Commit messages can adequately communicate why a change was made, and understanding that makes development and collaboration more efficien
+Tanto commit messages, como revisión de codigo nos ayuda a hacer mas entendible, para un desarrollo y colaboración más entendible.
 
 ```text
-Capitalized, short (50 chars or less) summary
+Todo en minusculas, con menos de 50 caracteres
 
-More detailed explanatory text, if necessary.  Wrap it to about 72
-characters or so.  In some contexts, the first line is treated as the
-subject of an email and the rest of the text as the body.  The blank
-line separating the summary from the body is critical (unless you omit
-the body entirely); tools like rebase can get confused if you run the
-two together.
+En el body se debe de incluir una breve explicación sobre lo que se resuelve
 
-Write your commit message in the imperative: "Fix bug" and not "Fixed bug"
-or "Fixes bug."  This convention matches up with commit messages generated
-by commands like git merge and git revert.
+Los cambios que se efectuan se deben de listar de la siguiente manera agregando Note:
 
-Further paragraphs come after blank lines.
+Note:
+- Se listan a continuación los cambios realizados
+- Segundo cambio realizado
 
-- Bullet points are okay, too
+Al usar Sentry especifica el codigo que provee
 
-- Typically a hyphen or asterisk is used for the bullet, followed by a
-  single space, with blank lines in between, but conventions vary here
-
-- Use a hanging indent
-
-If you use an issue tracker, add a reference(s) to them at the bottom,
-like so:
-
-Resolves: #123
+Fix: #WEEPEC-K1
 ```
 
 1. Especificar tipo de commit
-    * `feat`: The new feature you're adding to a particular application
-    * `fix`: A bug fix
-    * `style`: Feature and updates related to styling
+    * `feat`: Una nueva caracteristica que se agrega al proyecto (feature)
+    * `fix`: Un correccion de error (Bug Fix)
+    * `style`: alguna caracteristica o correccioón respecto a estilos
     * `refactor`: Refactoring a specific section of the codebase
-    * `test`: Everything related to testing
-    * `docs`: Everything related to documentation
-    * `chore`: Regular code maintenance.[ You can also use emojis to represent commit types]
+    * `test`: Todo lo relacionado con pruebas (Testing)
+    * `docs`: Todo lo relacionado con documentación
+    * `chore`: Mantenimiento de código de alguna sección o codigo base, [se puede usar emojis 😬 ]
+    * utilizar el main topic enseguida del tipo `Tipo(Topic)` este define que sección cambio y ayuda a comprender más el tipo de commit.
 
-The symbol ”!” can be used with any type. It signifies a breaking change that correlates with MAJOR in semantic versioning.
-Using BREAKING CHANGE in the footer introduces a breaking API change as well (correlating with MAJOR in semantic versioning).
 
-2. Separate the subject from the body with a blank line
-3. Your commit message should not contain any whitespace errors
-4. Remove unnecessary punctuation marks
-5. Do not end the subject line with a period
-6. Capitalize the subject line and each paragraph
+El simbolo "!" debe de ser usado para denotar breaking change (Cambios fuertes) el cual corresponde a una versión superior la cual ya no funciona con una versión anterior.
+```
+fix!(Pets): fix plates
+```
+
+2. separar subject y body con un salto de linea
+```
+eg.
+
+fix(Topic): add validation
+
+Body
+```
+3. el commit message no debe de contener espacios en blanco demás
+4. quitar signos de puntación innecesarios
+5. no finalizar el subject con un periodo
+6. todo en minusculas cada uno de los parrafos y subject
 7. Use the imperative mood in the subject line
-8. Use the body to explain what changes you have made and why you made them.
-9. Do not assume the reviewer understands what the original problem was, ensure you add it.
-10. Do not think your code is self-explanatory
-11. Follow the commit convention defined by your team
+8. Usar el body del commit para explicar que cambios se realizaron
+9. No asumir que quien revisa sabe todo el contexto, hay que incluir los detalles del problema
+10. No pensar que el commit explica todo lo que se realizo
+11. Seguir la estructura de commit definida por el equipo
 
 # Revisión de código 
+Al realizar pull request se debe de asiganr a un reviewer quien analizara y determinara si el pull request continua, en dado caso que el merge a master tenga inconvientes se revertira el merge
 ## Puntos a considerar
 * Evitar código comentado en cualquier punto
-* uso de `console.log` debe de ser unicamente en desarrolo y cierto punto de debuging
+* uso de `console.log` debe de ser unicamente en desarrollo y cierto punto de debuging
 * no usar segmentación de código y repetir código
+* uso de variables fuera de scope o sin utilizar
+* no se permite el uso de `var`
+* para `ReactNative` y `ReactJs` el crear componentes es obligatorio
+* el realizar push directamente a master esta prohibido
+* la manera en realizar un release a master es con un pull request
